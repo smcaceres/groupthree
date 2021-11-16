@@ -1,0 +1,23 @@
+{
+  "name": "groupthree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/missroseblue/groupthree.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/missroseblue/groupthree/issues"
+  },
+  "homepage": "https://github.com/missroseblue/groupthree#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
