@@ -2,7 +2,7 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
 
-// GET / (renders all posts using Handlebars(?))
+// GET / (renders all posts using Handlebars)
 router.get('/', (req, res) => {
     Post.findAll({
         attributes: [

@@ -46,11 +46,20 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    post_url: {
-      type: DataTypes.STRING,
+    // post_url: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     isURL: true
+    //   }
+    // },
+    rating: {
+      type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
-        isURL: true
+        isDecimal: true,
+        min: 0,
+        max: 10
       }
     },
     user_id: {
