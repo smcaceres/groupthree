@@ -51,17 +51,22 @@ This project has an MIT License
 ## Questions
 If you have additional questions about my project, you can reach me at:
 
-GitHub Username: kg-phantom
+GitHub Username: kg-phantom 
+
 Email: ksurbayan@gmail.com
 
 GitHub Username: missroseblue
+
 Email: missroseblue@gmail.com
   
-GitHub Username: 
+GitHub Username: johnstapleton52
+
 Email: johnstapleton52@gmail.com
 
-GitHub Username: 
+GitHub Username: NicWille
+
 Email: nic.wille1020@yahoo.com
 
-GitHub Username: 
+GitHub Username: simonwilder
+
 Email: simonwolfewilder@gmail.com
