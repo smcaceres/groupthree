@@ -1,7 +1,7 @@
 {
   "name": "groupthree",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Description",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -25,7 +25,9 @@
     "express": "^4.17.1",
     "express-handlebars": "^6.0.1",
     "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "sequelize": "^6.9.0"
-  }
+  },
+  "devDependencies": {}
 }
