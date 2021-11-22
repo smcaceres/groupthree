@@ -8,6 +8,7 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'rating',
+            'content',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
             'vote_count'
@@ -47,6 +48,7 @@ router.get('/:id', (req, res) => {
             'id',
             'title',
             'rating',
+            'content',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
             'vote_count'
@@ -109,11 +111,12 @@ router.put('/upvote', (req, res) => {
     }
 });
 
-// PUT /api/posts/:id (edit post rating)
+// PUT /api/posts/:id (edit post rating and content)
 router.put('/:id', (req, res) => {
     Post.update(
         {
-            rating: req.body.rating
+            rating: req.body.rating,
+            content: req.body.content
         },
         {
             where: {
