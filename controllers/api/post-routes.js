@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment, Vote } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET /api/posts
 router.get('/', (req, res) => {
@@ -81,7 +82,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/posts (create new post)
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         rating: req.body.rating,
@@ -96,7 +97,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT /api/posts/upvote (vote on a post)
-router.put('/upvote', (req, res) => {
+router.put('/upvote', withAuth, (req, res) => {
     // check for session
     if(req.session) {
         // FOLLOW SANDRA'S POST MODEL
@@ -110,7 +111,7 @@ router.put('/upvote', (req, res) => {
 });
 
 // PUT /api/posts/:id (edit post rating)
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
             rating: req.body.rating
@@ -135,7 +136,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE /api/posts/:id (delete a post)
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
