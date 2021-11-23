@@ -71,8 +71,7 @@ router.post('/', (req, res) => {
         })
 });
 
-// POST /api/login (login user)
-// WAIT FOR NIC'S AUTH
+// POST /api/users/login (login user)
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -87,7 +86,7 @@ router.post('/login', (req, res) => {
 
             // Verify user
             const validPassword = dbUserData.checkPassword(req.body.password);
-            if(validPassword) {
+            if(!validPassword) {
                 res.status(400).json({ message: 'Incorrect password!' });
                 return;
             }
@@ -102,9 +101,9 @@ router.post('/login', (req, res) => {
         });
 });
 
-// POST /api/logout (logout user)
+// POST /api/users/logout (logout user)
 router.post('/logout', withAuth, (req, res) => {
-    if(res.session.loggedIn) {
+    if(req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         });
