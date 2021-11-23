@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User, Post, Comment, Vote } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET /api/users (all users)
 router.get('/', (req, res) => {
@@ -23,12 +24,10 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Post,
-                // FOLLOW SANDRA'S MODEL ATTRIBUTES
                 attributes: ['id', 'title', 'rating', 'content', 'created_at']
             },
             {
                 model: Comment,
-                // FOLLOW SANDRA'S MODEL ATTRIBUTES
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: Post,
@@ -70,8 +69,7 @@ router.post('/', (req, res) => {
         })
 });
 
-// POST /api/login (login user)
-// WAIT FOR NIC'S AUTH
+// POST /api/users/login (login user)
 router.post('/login', (req, res) => {
     User.findOne({
         where: {
@@ -86,7 +84,7 @@ router.post('/login', (req, res) => {
 
             // Verify user
             const validPassword = dbUserData.checkPassword(req.body.password);
-            if(validPassword) {
+            if(!validPassword) {
                 res.status(400).json({ message: 'Incorrect password!' });
                 return;
             }
@@ -101,9 +99,9 @@ router.post('/login', (req, res) => {
         });
 });
 
-// POST /api/logout (logout user)
-router.post('/logout', (req, res) => {
-    if(res.session.loggedIn) {
+// POST /api/users/logout (logout user)
+router.post('/logout', withAuth, (req, res) => {
+    if(req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         });
@@ -113,7 +111,7 @@ router.post('/logout', (req, res) => {
 });
 
 // DELETE /api/users/1
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     User.destroy({
         where: {
             id: req.params.id
