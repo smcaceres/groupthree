@@ -24,12 +24,10 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Post,
-                // FOLLOW SANDRA'S MODEL ATTRIBUTES
                 attributes: ['id', 'title', 'rating', 'content', 'created_at']
             },
             {
                 model: Comment,
-                // FOLLOW SANDRA'S MODEL ATTRIBUTES
                 attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
                 include: {
                     model: Post,
