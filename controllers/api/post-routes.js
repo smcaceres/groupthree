@@ -1,5 +1,7 @@
 const router = require('express').Router();
+const sequelize = require('../../config/connection');
 const { User, Post, Comment, Vote } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // GET /api/posts
 router.get('/', (req, res) => {
@@ -8,13 +10,17 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'rating',
+            'content',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
             'vote_count'
             ]
         ],
         // Order by most voted
-        order: [['vote_count', 'DESC']],
+        order: [[
+            sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
+            'DESC'
+        ]],
         include: [
             {
                 model: Comment,
@@ -47,6 +53,7 @@ router.get('/:id', (req, res) => {
             'id',
             'title',
             'rating',
+            'content',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'),
             'vote_count'
@@ -81,10 +88,11 @@ router.get('/:id', (req, res) => {
 });
 
 // POST /api/posts (create new post)
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         rating: req.body.rating,
+        content: req.body.content,
         user_id: req.session.user_id
     })
         .then(dbPostData => res.json(dbPostData))
@@ -95,10 +103,9 @@ router.post('/', (req, res) => {
 });
 
 // PUT /api/posts/upvote (vote on a post)
-router.put('/upvote', (req, res) => {
+router.put('/upvote', withAuth, (req, res) => {
     // check for session
     if(req.session) {
-        // FOLLOW SANDRA'S POST MODEL
         Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
             .then(updatedPostData => res.json(updatedPostData))
             .catch(err => {
@@ -109,10 +116,11 @@ router.put('/upvote', (req, res) => {
 });
 
 // PUT /api/posts/:id (edit post rating)
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
         {
-            rating: req.body.rating
+            rating: req.body.rating,
+            content: req.body.content
         },
         {
             where: {
@@ -134,7 +142,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE /api/posts/:id (delete a post)
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
