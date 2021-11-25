@@ -1,3 +1,20 @@
+<section>
+  <h2>Rate a Movie</h2>
+
+    <form class="new-post-form">
+        <div>
+            <input type="text" id="movie-title" name="movie-title" placeholder="Movie Title" />
+        </div>
+        <div>
+            <input id="rating" name="rating" placeholder="Rating" />
+        </div>
+        <div>
+            <input id="content" name="content" placeholder="Reason for this rating" />
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+</section>
+
 {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
@@ -15,3 +32,5 @@
     <h2>You haven't rated any movies yet!</h2>
 </section>
 {{/if}}
+
+<script src='/javascript/add-post.js'></script>
