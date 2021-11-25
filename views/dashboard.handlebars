@@ -1,0 +1,17 @@
+{{#if posts.length}}
+<section>
+    <h2>Your Posts</h2>
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            {{> post-info post}}
+            <a href='/dashboard/edit/{{post.id}}' class='edit-link'>Edit post</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+{{else}}
+<section>
+    <h2>You haven't rated any movies yet!</h2>
+</section>
+{{/if}}
