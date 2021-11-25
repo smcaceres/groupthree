@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Critics Corner</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <!-- Bootstrap core CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+
+<body class="text-center">
+    <div class="wrapper">
+        <header>
+            <h1>
+                <a href="/">Critics Corner</a>
+            </h1>
+            <nav>
+                {{#if loggedIn}}
+                <a href="/dashboard">dashboard</a>
+                <button id="logout" class="btn-no-style">logout</button>
+                {{else}}
+                <a href="/login">login</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main class="text-center">
+            {{{body}}}
+            </mainclass="text-center">
+            <footer>
+            </footer>
+    </div>
+
+</body>
+
+{{#if loggedIn}}
+<script src='/javascript/logout.js'></script>
+{{/if}}
+
+</html>
