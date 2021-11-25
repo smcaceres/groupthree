@@ -27,7 +27,12 @@ Critic's Corner is an application that allows users to
 
 
 ## Installation
-npm start
+* must have your own .env file
+* npm start
+* dotenv
+* express
+* handlebars
+* 
 
 ## Usage
 N/A
@@ -44,6 +49,7 @@ This project has an MIT License
 * Nic Wille
 * Simon Wilder
 * John Stapleton
+* Sandra Caceres
 
 ## Technology
 * Javascript
@@ -55,17 +61,21 @@ GitHub Username: kg-phantom
 
 Email: ksurbayan@gmail.com
 
+
 GitHub Username: missroseblue
 
 Email: missroseblue@gmail.com
   
+
 GitHub Username: johnstapleton52
 
 Email: johnstapleton52@gmail.com
 
+
 GitHub Username: NicWille
 
 Email: nic.wille1020@yahoo.com
+
 
 GitHub Username: simonwilder
 
