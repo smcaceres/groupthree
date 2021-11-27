@@ -92,3 +92,7 @@ section {
 .post-content {
   text-align: left;
 }
+
+.edit-post-form {
+  padding: 10px;
+}
