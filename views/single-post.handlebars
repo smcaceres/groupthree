@@ -1,5 +1,8 @@
 <section>
     {{> post-info post }}
+    {{#if loggedIn}}
+    <button type="button" class="btn btn-success upvote-btn">Upvote</button>
+    {{/if}}
 </section>
 <br />
 
@@ -32,4 +35,5 @@
 
 {{#if loggedIn}}
 <script src="/javascript/add-comment.js"></script>
+<script src="/javascript/upvote.js"></script>
 {{/if}}
