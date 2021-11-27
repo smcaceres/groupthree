@@ -81,6 +81,10 @@ section {
   margin-left: 16px;
 }
 
+.post {
+  margin: 5px 0px 5px 0px;
+}
+
 .title {
   text-align: left;
 }
