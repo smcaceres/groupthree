@@ -15,6 +15,14 @@ body {
   background-color: #f5f5f5;
 }
 
+.wrapper {
+  width: 70%;
+}
+
+section {
+  margin: 10px 0px 10px 0px;
+}
+
 .form {
   width: 100%;
   max-width: 330px;
@@ -38,6 +46,10 @@ body {
   z-index: 2;
 }
 
+.new-post-form input {
+  width: 100%;
+}
+
 .top {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
@@ -55,6 +67,10 @@ body {
   border-top-right-radius: 0;
 }
 
+.btn {
+  margin: 5px;
+}
+
 .btn-no-style {
   background: none;
   border: none;
@@ -63,4 +79,12 @@ body {
   font-size: 100%;
   transition: color .1s;
   margin-left: 16px;
+}
+
+.title {
+  text-align: left;
+}
+
+.post-content {
+  text-align: left;
 }
