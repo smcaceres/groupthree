@@ -1,0 +1,39 @@
+<section>
+    {{> post-info post }}
+    {{#if loggedIn}}
+    <button type="button" class="btn btn-success upvote-btn">Upvote</button>
+    {{/if}}
+</section>
+<br />
+
+<section>
+{{#if post.comments.length}}
+    <h2>Comments</h2>
+{{> comments post.comments }}
+{{else}}
+    <h2>No comments yet!</h2>
+{{/if}}
+</section>
+<br />
+
+{{#if loggedIn}}
+<section>
+    <h2>Add A Comment</h2>
+    <div class="list-item">
+        <form class="comment-form">
+            <div>
+                <textarea class="form-control" name="comment-body" rows="3"></textarea>
+            </div>
+
+            <div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/add-comment.js"></script>
+<script src="/javascript/upvote.js"></script>
+{{/if}}
