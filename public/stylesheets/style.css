@@ -80,3 +80,11 @@ section {
   transition: color .1s;
   margin-left: 16px;
 }
+
+.title {
+  text-align: left;
+}
+
+.post-content {
+  text-align: left;
+}
