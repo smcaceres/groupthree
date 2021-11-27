@@ -1,4 +1,6 @@
-{{> post-info post }}
+<section>
+    {{> post-info post }}
+</section>
 <br />
 
 <section>
@@ -15,14 +17,13 @@
 <section>
     <h2>Add A Comment</h2>
     <div class="list-item">
-        <div class="list-item-header"></div>
         <form class="comment-form">
             <div>
-                <textarea name="comment-body"></textarea>
+                <textarea class="form-control" name="comment-body" rows="3"></textarea>
             </div>
 
             <div>
-                <button class="btn" type="submit">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
             </div>
         </form>
     </div>
