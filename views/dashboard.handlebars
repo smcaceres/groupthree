@@ -2,30 +2,39 @@
   <h2>Rate a Movie</h2>
 
     <form class="new-post-form">
-        <div>
-            <input type="text" id="movie-title" name="movie-title" placeholder="Movie Title" />
+        <div class="form-group">
+            <input type="text" class="form-control" id="movie-title" name="movie-title" placeholder="Movie Title" />
         </div>
-        <div>
-            <input id="rating" name="rating" placeholder="Rating" />
+        <div class="form-group">
+            <select id="rating" class="form-control" name="rating" placeholder="Rating">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
         </div>
-        <div>
-            <input id="content" name="content" placeholder="Reason for this rating" />
+        <div class="form-group">
+            <textarea class="form-control" id="content" name="content" rows="3" placeholder="Reason for this rating"></textarea>
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </section>
 
 {{#if posts.length}}
 <section>
     <h2>Your Posts</h2>
-    <ul>
-        {{#each posts as |post|}}
-        <li>
-            {{> post-info post}}
-            <a href='/dashboard/edit/{{post.id}}' class='edit-link'>Edit post</a>
-        </li>
-        {{/each}}
-    </ul>
+    <br />
+    {{#each posts as |post|}}
+    {{> post-info post}}
+    <a href='/dashboard/edit/{{post.id}}' class='edit-link'>Edit post</a>
+    {{/each}}
 </section>
 {{else}}
 <section>

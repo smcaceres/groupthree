@@ -2,8 +2,8 @@ async function newFormHandler(event) {
     event.preventDefault();
   
     const title = document.querySelector('input[name="movie-title"]').value;
-    const rating = document.querySelector('input[name="rating"]').value;
-    const content = document.querySelector('input[name="content"]').value;
+    const rating = document.querySelector('select[name="rating"]').value;
+    const content = document.querySelector('textarea[name="content"]').value;
   
     const response = await fetch(`/api/posts`, {
         method: 'POST',
