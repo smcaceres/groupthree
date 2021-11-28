@@ -7,6 +7,11 @@ async function editPostHandler(event) {
   
     const rating = document.querySelector('select[name="rating"]').value.trim();
     const content = document.querySelector('textarea[name="post-content"]').value.trim();
+
+    if(!rating || !content) {
+        $('#errorModal').modal();
+        return;
+    }
   
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
