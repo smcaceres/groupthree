@@ -7,6 +7,11 @@ async function addCommentHandler(event) {
 
     const comment_text = document.querySelector('textarea[name="comment-body"]').value.trim();
 
+    if(!comment_text) {
+        $('#errorModal').modal();
+        return;
+    }
+
     const response = await fetch(`/api/comments`, {
         method: "POST",
         body: JSON.stringify({
