@@ -27,7 +27,8 @@ async function editPostHandler(event) {
     if (response.ok) {
         document.location.replace('/dashboard');
     } else {
-        alert(response.statusText);
+        $('#errorServerModal').modal();
+        return;
     }
 }
 
@@ -45,7 +46,8 @@ async function deletePostHandler(event) {
     if(response.ok) {
         document.location.replace('/dashboard');
     } else {
-        alert(response.statusText);
+        $('#errorServerModal').modal();
+        return;
     }
 }
   
