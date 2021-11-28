@@ -1,0 +1,79 @@
+<!-- Upvote Error Modal -->
+<div class="modal fade" id="errorUpvoteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Hold your horses!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You already upvoted this post!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Comment Error Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">You forgot something!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Don't forget to write your comment before submitting!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+    {{> post-info post }}
+    {{#if loggedIn}}
+    <button type="button" class="btn btn-success upvote-btn">Upvote</button>
+    {{/if}}
+</section>
+<br />
+
+<section>
+{{#if post.comments.length}}
+    <h2>Comments</h2>
+{{> comments post.comments }}
+{{else}}
+    <h2>No comments yet!</h2>
+{{/if}}
+</section>
+<br />
+
+{{#if loggedIn}}
+<section>
+    <h2>Add A Comment</h2>
+    <div class="list-item">
+        <form class="comment-form">
+            <div>
+                <textarea class="form-control" name="comment-body" rows="3"></textarea>
+            </div>
+
+            <div>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</section>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/add-comment.js"></script>
+<script src="/javascript/upvote.js"></script>
+{{/if}}

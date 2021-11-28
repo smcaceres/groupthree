@@ -17,7 +17,7 @@ const sess = {
     saveUninitialized: true,
     store: new SequelizeStore({
         db: sequelize,
-        checkExpirationInterval: 60 * 1000,
+        checkExpirationInterval: 30 * 60 * 1000,
         expiration: 60 * 60 * 1000
     })
 };
@@ -36,7 +36,7 @@ app.use(require('./controllers/'));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ force: true }).then(() => {
     app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
 });
 
