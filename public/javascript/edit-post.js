@@ -7,6 +7,11 @@ async function editPostHandler(event) {
   
     const rating = document.querySelector('select[name="rating"]').value.trim();
     const content = document.querySelector('textarea[name="post-content"]').value.trim();
+
+    if(!rating || !content) {
+        $('#errorModal').modal();
+        return;
+    }
   
     const response = await fetch(`/api/posts/${id}`, {
         method: 'PUT',
@@ -22,7 +27,8 @@ async function editPostHandler(event) {
     if (response.ok) {
         document.location.replace('/dashboard');
     } else {
-        alert(response.statusText);
+        $('#errorServerModal').modal();
+        return;
     }
 }
 
@@ -40,7 +46,8 @@ async function deletePostHandler(event) {
     if(response.ok) {
         document.location.replace('/dashboard');
     } else {
-        alert(response.statusText);
+        $('#errorServerModal').modal();
+        return;
     }
 }
   
