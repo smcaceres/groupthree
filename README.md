@@ -79,6 +79,7 @@ This project has an MIT License
 * Nic Wille
 * Simon Wilder
 * John Stapleton
+* Sandra Caceres
 
 ## Technology
 * Javascript
