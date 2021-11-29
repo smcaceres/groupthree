@@ -1,10 +1,22 @@
 <!-- Signup Error Modal -->
-<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div
+  class="modal fade"
+  id="errorModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">You forgot something!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -12,19 +24,35 @@
         Please fill in all sections!
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button
+          type="button"
+          class="btn btn-dark"
+          data-dismiss="modal"
+        >OK</button>
       </div>
     </div>
   </div>
 </div>
 
 <!-- Login Error Modal -->
-<div class="modal fade" id="errorLoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div
+  class="modal fade"
+  id="errorLoginModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Error</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -34,44 +62,73 @@
         Check your email and password, or come back later.
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        <button
+          type="button"
+          class="btn btn-dark"
+          data-dismiss="modal"
+        >OK</button>
       </div>
     </div>
   </div>
 </div>
 
 <form class="login-form form">
-    <div>
-        {{!-- <label for="email-login">email:</label> --}}
-        <input class="form-control top" type="text" id="email-login" placeholder="email" />
-    </div>
-    <div>
-        {{!-- <label for="password-login">password:</label> --}}
-        <input class="form-control bottom" type="password" id="password-login" placeholder="password" />
-    </div>
-    <div>
-        {{!-- <button type="submit">login</button> --}}
-        <button type="submit" class="btn btn-primary">Login</button>
-    </div>
+  <div>
+    {{! <label for="email-login">email:</label> }}
+    <input
+      class="form-control top"
+      type="text"
+      id="email-login"
+      placeholder="email"
+    />
+  </div>
+  <div>
+    {{! <label for="password-login">password:</label> }}
+    <input
+      class="form-control bottom"
+      type="password"
+      id="password-login"
+      placeholder="password"
+    />
+  </div>
+  <div>
+    {{! <button type="submit">login</button> }}
+    <button type="submit" class="btn btn-dark">Login</button>
+  </div>
 </form>
 
 <form class="signup-form form">
-    <div>
-        {{!-- <label for="username-signup">username:</label> --}}
-        <input class="form-control top" type="text" id="username-signup" placeholder="choose a username" />
-    </div>
-    <div>
-        {{!-- <label for="email-signup">email:</label> --}}
-        <input class="form-control middle" placeholder="your-email@mailbox.com" type="text" id="email-signup" />
-    </div>
-    <div>
-        {{!-- <label for="password-signup">password:</label> --}}
-        <input class="form-control bottom" type="password" id="password-signup" placeholder="password" />
-    </div>
-    <div>
-        {{!-- <button type="submit">signup</button> --}}
-        <button type="submit" class="btn btn-primary">Sign-up</button>
-    </div>
+  <div>
+    {{! <label for="username-signup">username:</label> }}
+    <input
+      class="form-control top"
+      type="text"
+      id="username-signup"
+      placeholder="choose a username"
+    />
+  </div>
+  <div>
+    {{! <label for="email-signup">email:</label> }}
+    <input
+      class="form-control middle"
+      placeholder="your-email@mailbox.com"
+      type="text"
+      id="email-signup"
+    />
+  </div>
+  <div>
+    {{! <label for="password-signup">password:</label> }}
+    <input
+      class="form-control bottom"
+      type="password"
+      id="password-signup"
+      placeholder="password"
+    />
+  </div>
+  <div>
+    {{! <button type="submit">signup</button> }}
+    <button type="submit" class="btn btn-dark">Sign-up</button>
+  </div>
 </form>
 
 <script src="/javascript/login.js"></script>
