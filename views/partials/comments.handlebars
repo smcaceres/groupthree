@@ -1,0 +1,8 @@
+<div class="card list-group">
+    {{#each this}}
+    <div class="card-body post-content list-group-item">
+        <p>{{comment_text}}</p>
+        <p>- {{user.username}},  {{format_date created_at}}</p>    
+    </div>
+    {{/each}}
+</div>

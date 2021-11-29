@@ -22,6 +22,9 @@ async function signupFormHandler(event) {
         } else {
             alert(response.statusText);
         }
+    } else {
+        $('#errorModal').modal();
+        return;
     }
 }
 
@@ -44,10 +47,11 @@ async function loginFormHandler(event) {
         if (response.ok) {
             document.location.replace('/dashboard');
         } else {
-            alert(response.statusText);
+            $('#errorLoginModal').modal();
+            return;
         }
     }
-  }
+}
   
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 

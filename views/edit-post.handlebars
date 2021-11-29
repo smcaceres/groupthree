@@ -1,0 +1,79 @@
+<!-- Content Error Modal -->
+<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">You forgot something!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Don't forget to give the reason for your rating!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Server Error Modal -->
+<div class="modal fade" id="errorServerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Oops!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Something went wrong. Try again later!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section>
+    <div class="list-item-header">
+        <h2>Edit Post</h2>
+    </div>
+
+    <div class="card post">
+        <div class="card-header title">
+        <h3>{{post.title}}</h3>
+        </div>
+        <form class="edit-post-form">
+            <div class="content">
+                <label for="rating">Rating</label>
+                <select id="rating" class="form-control" name="rating" required="true">
+                <option value="{{post.rating}}">{{post.rating}} (Current rating)</option>
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+            </select>
+                <label for="post-content">Reason for your rating</label>
+                <br />
+                <textarea id="post-content" class="form-control" name="post-content">
+                    {{post.content}}
+                </textarea>
+            </div>
+            <button id="update-btn" type="submit" class="btn btn-success">Update Post</button>
+            <button id="delete-btn" type="click" class="btn btn-danger">Delete Post</button>
+        </form>
+    </div>
+</section>
+
+<script src='/javascript/edit-post.js'></script>
