@@ -34,14 +34,6 @@ Critic's Corner is a web application that allows users to:
 [Click here](https://critics-corner-forum.herokuapp.com/) to go to the deployed application.
 
 ## Installation
-<<<<<<< HEAD
-* must have your own .env file
-* npm start
-* dotenv
-* express
-* handlebars
-* 
-=======
 To install the app on your machine for development and/or testing:
 
 1. Install [Node.js](https://nodejs.org/en/) and [MySQL](https://dev.mysql.com/downloads/mysql) if you haven't already.
@@ -65,7 +57,6 @@ sequelize.sync({ force: true }).then(() => {
 });
 ```
 10. Remember to set it back to `{ force: false }` once you have set up the database.
->>>>>>> sc-style
 
 ## Usage
 1. Go to the deployed app at [https://critics-corner-forum.herokuapp.com/](https://critics-corner-forum.herokuapp.com/).
