@@ -9,19 +9,23 @@
     <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body class="text-center">
     <div class="wrapper">
         <header>
+            <img src="../../assets/images/criticscorner.jpg" alt="Critic's Corner logo" class="center">
             <h1>
                 <a href="/">Critics Corner</a>
             </h1>
             <nav>
                 {{#if loggedIn}}
                 <a href="/dashboard">dashboard</a>
-                <button id="logout" class="btn-no-style">logout</button>
+                <button id="logout" class="btn btn-dark">logout</button>
                 {{else}}
                 <a href="/login">login</a>
                 {{/if}}
