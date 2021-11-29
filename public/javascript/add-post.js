@@ -26,8 +26,13 @@ async function newFormHandler(event) {
 document.querySelector('#new-post-form').addEventListener('submit', newFormHandler);
 =======
     const title = document.querySelector('input[name="movie-title"]').value;
-    const rating = document.querySelector('input[name="rating"]').value;
-    const content = document.querySelector('input[name="content"]').value;
+    const rating = document.querySelector('select[name="rating"]').value;
+    const content = document.querySelector('textarea[name="content"]').value;
+
+    if(!title || !rating || !content) {
+        $('#errorModal').modal();
+        return;
+    }
   
     const response = await fetch(`/api/posts`, {
         method: 'POST',
